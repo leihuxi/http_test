@@ -1,0 +1,12 @@
+TODO:
+1.目前是短连接数据库，后面改为长连接或者连接池
+2.完善逻辑
+  put 用户关系的时候判断是否已经是用户
+RUN:
+step 1:
+在postgres中创建下面表:
+CREATE TABLE users (id SERIAL, name varchar(50), type varchar(20), primary key (name));
+CREATE TABLE user_rel (id bigint, idrel bigint, state varchar(20), type varchar(20), primary key (id, idrel));
+step 2:
+cd $YOU_CODE_PATH
+go run *.go
